@@ -2,18 +2,18 @@ import { useState } from "react";
 
 import Button from "./components/Button.jsx";
 import Home from "./pages/Home.jsx";
-import About from "./pages/About.jsx";
-import Contact from "./pages/Contact.jsx";
+import Counter from "./pages/Counter.jsx";
+import DiceRoll from "./pages/DiceRoll.jsx";
+import Modal from "./pages/Modal.jsx";
 
 export default () => {
-  const [currentPage, setCurrentPage] = useState("home");
+  const [currentPage, setCurrentPage] = useState("modal");
 
   return (
     <div>
       <div className="flex ">
-      <Button className={
-            currentPage == "home" ? "bg-red-500 hover:bg-red-500" : ""
-          }
+        <Button
+          className={currentPage == "home" ? "bg-red-500 hover:bg-red-500" : ""}
           onClick={() => {
             setCurrentPage("home");
           }}
@@ -22,31 +22,44 @@ export default () => {
         </Button>
         <Button
           className={
-            currentPage == "about" ? "bg-red-500 hover:bg-red-500" : ""
+            currentPage == "counter" ? "bg-red-500 hover:bg-red-500" : ""
           }
           onClick={() => {
-            setCurrentPage("about");
+            setCurrentPage("counter");
           }}
         >
-          About
+          Counter
         </Button>
-        
-        <Button className={
-            currentPage == "contact" ? "bg-red-500 hover:bg-red-500" : ""
+
+        <Button
+          className={
+            currentPage == "diceRoll" ? "bg-red-500 hover:bg-red-500" : ""
           }
           onClick={() => {
-            setCurrentPage("contact");
+            setCurrentPage("diceRoll");
           }}
         >
-          Contact
+          DiceRoll
+        </Button>
+        <Button
+          className={
+            currentPage == "modal" ? "bg-red-500 hover:bg-red-500" : ""
+          }
+          onClick={() => {
+            setCurrentPage("modal");
+          }}
+        >
+          Modal
         </Button>
       </div>
       {currentPage == "home" ? (
         <Home></Home>
-      ) : currentPage == "about" ? (
-        <About></About>
-      ) : currentPage == "contact" ? (
-        <Contact></Contact>
+      ) : currentPage == "counter" ? (
+        <Counter></Counter>
+      ) : currentPage == "diceRoll" ? (
+        <DiceRoll></DiceRoll>
+      ) : currentPage == "modal" ? (
+        <Modal></Modal>
       ) : (
         <div></div>
       )}
