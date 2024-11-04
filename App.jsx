@@ -13,7 +13,7 @@ export default () => {
     <div>
       <div className="flex ">
         <Button
-          className={currentPage == "home" ? "bg-red-500 hover:bg-red-500" : ""}
+          className={currentPage == "home" ? "bg-red-500 hover:bg-red-700" : ""}
           onClick={() => {
             setCurrentPage("home");
           }}
@@ -22,7 +22,7 @@ export default () => {
         </Button>
         <Button
           className={
-            currentPage == "counter" ? "bg-red-500 hover:bg-red-500" : ""
+            currentPage == "counter" ? "bg-red-500 hover:bg-red-700" : ""
           }
           onClick={() => {
             setCurrentPage("counter");
@@ -33,7 +33,7 @@ export default () => {
 
         <Button
           className={
-            currentPage == "diceRoll" ? "bg-red-500 hover:bg-red-500" : ""
+            currentPage == "diceRoll" ? "bg-red-500 hover:bg-red-700" : ""
           }
           onClick={() => {
             setCurrentPage("diceRoll");
@@ -43,7 +43,7 @@ export default () => {
         </Button>
         <Button
           className={
-            currentPage == "modal" ? "bg-red-500 hover:bg-red-500" : ""
+            currentPage == "modal" ? "bg-red-500 hover:bg-red-700" : ""
           }
           onClick={() => {
             setCurrentPage("modal");
