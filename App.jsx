@@ -5,15 +5,17 @@ import Home from "./pages/Home.jsx";
 import Counter from "./pages/Counter.jsx";
 import DiceRoll from "./pages/DiceRoll.jsx";
 import Modal from "./pages/Modal.jsx";
+import Info from "./pages/Info.jsx";
+import Colors from "./pages/Colors.jsx";
 
 export default () => {
-  const [currentPage, setCurrentPage] = useState("modal");
+  const [currentPage, setCurrentPage] = useState("colors");
 
   return (
     <div>
       <div className="flex ">
         <Button
-          className={currentPage == "home" ? "bg-red-500 hover:bg-red-700" : ""}
+          className={currentPage == "home" ? "bg-red-500 hover:bg-red-500" : ""}
           onClick={() => {
             setCurrentPage("home");
           }}
@@ -22,7 +24,7 @@ export default () => {
         </Button>
         <Button
           className={
-            currentPage == "counter" ? "bg-red-500 hover:bg-red-700" : ""
+            currentPage == "counter" ? "bg-red-500 hover:bg-red-500" : ""
           }
           onClick={() => {
             setCurrentPage("counter");
@@ -33,7 +35,7 @@ export default () => {
 
         <Button
           className={
-            currentPage == "diceRoll" ? "bg-red-500 hover:bg-red-700" : ""
+            currentPage == "diceRoll" ? "bg-red-500 hover:bg-red-500" : ""
           }
           onClick={() => {
             setCurrentPage("diceRoll");
@@ -43,7 +45,7 @@ export default () => {
         </Button>
         <Button
           className={
-            currentPage == "modal" ? "bg-red-500 hover:bg-red-700" : ""
+            currentPage == "modal" ? "bg-red-500 hover:bg-red-500" : ""
           }
           onClick={() => {
             setCurrentPage("modal");
@@ -51,15 +53,41 @@ export default () => {
         >
           Modal
         </Button>
+
+        <Button
+          className={currentPage == "info" ? "bg-red-500 hover:bg-red-500" : ""}
+          onClick={() => {
+            setCurrentPage("info");
+          }}
+        >
+          Info
+        </Button>
+
+        <Button
+          className={
+            currentPage == "colors" ? "bg-red-500 hover:bg-red-500" : ""
+          }
+          onClick={() => {
+            setCurrentPage("colors");
+          }}
+        >
+          Colors
+        </Button>
       </div>
       {currentPage == "home" ? (
         <Home></Home>
-      ) : currentPage == "counter" ? (
+      ) : 
+      currentPage == "counter" ? (
         <Counter></Counter>
-      ) : currentPage == "diceRoll" ? (
+      ) :
+       currentPage == "diceRoll" ? (
         <DiceRoll></DiceRoll>
       ) : currentPage == "modal" ? (
         <Modal></Modal>
+      ) : currentPage == "info" ? (
+        <Info></Info>
+      ) : currentPage == "colors" ? (
+        <Colors></Colors>
       ) : (
         <div></div>
       )}
