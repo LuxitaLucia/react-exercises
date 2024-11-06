@@ -1,5 +1,5 @@
 
-import ColorsComponent from "../components/ColorsComponent.jsx";
+import ColorsComponent from "../components/Folder1/ColorsComponent.jsx";
 
 export default () => {
 

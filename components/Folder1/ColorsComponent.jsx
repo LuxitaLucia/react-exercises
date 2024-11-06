@@ -1,6 +1,6 @@
-import Button from "./Button.jsx";
+import Button from "../Button.jsx";
 import { useState } from "react";
-import Title from "../Title.jsx";
+import Title from "./Folder2/Title.jsx"
 
 export default () => {
   const [red, setRed] = useState(255);
