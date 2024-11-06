@@ -7,9 +7,10 @@ import DiceRoll from "./pages/DiceRoll.jsx";
 import Modal from "./pages/Modal.jsx";
 import Info from "./pages/Info.jsx";
 import Colors from "./pages/Colors.jsx";
+import ToDoList from "./pages/ToDoList.jsx";
 
 export default () => {
-  const [currentPage, setCurrentPage] = useState("colors");
+  const [currentPage, setCurrentPage] = useState("toDoList");
 
   return (
     <div>
@@ -73,14 +74,23 @@ export default () => {
         >
           Colors
         </Button>
+
+        <Button
+          className={
+            currentPage == "toDoList" ? "bg-red-500 hover:bg-red-500" : ""
+          }
+          onClick={() => {
+            setCurrentPage("toDoList");
+          }}
+        >
+          ToDoList
+        </Button>
       </div>
       {currentPage == "home" ? (
         <Home></Home>
-      ) : 
-      currentPage == "counter" ? (
+      ) : currentPage == "counter" ? (
         <Counter></Counter>
-      ) :
-       currentPage == "diceRoll" ? (
+      ) : currentPage == "diceRoll" ? (
         <DiceRoll></DiceRoll>
       ) : currentPage == "modal" ? (
         <Modal></Modal>
@@ -88,6 +98,8 @@ export default () => {
         <Info></Info>
       ) : currentPage == "colors" ? (
         <Colors></Colors>
+      ) : currentPage == "toDoList" ? (
+        <ToDoList></ToDoList>
       ) : (
         <div></div>
       )}
