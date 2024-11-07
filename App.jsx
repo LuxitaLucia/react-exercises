@@ -8,9 +8,10 @@ import Modal from "./pages/Modal.jsx";
 import Info from "./pages/Info.jsx";
 import Colors from "./pages/Colors.jsx";
 import ToDoList from "./pages/ToDoList.jsx";
+import ColorPicker from "./pages/ColorPicker.jsx";
 
 export default () => {
-  const [currentPage, setCurrentPage] = useState("toDoList");
+  const [currentPage, setCurrentPage] = useState("colorPicker");
 
   return (
     <div>
@@ -85,6 +86,17 @@ export default () => {
         >
           ToDoList
         </Button>
+
+        <Button
+          className={
+            currentPage == "colorPicker" ? "bg-red-500 hover:bg-red-500" : ""
+          }
+          onClick={() => {
+            setCurrentPage("colorPicker");
+          }}
+        >
+          ColorPicker
+        </Button>
       </div>
       {currentPage == "home" ? (
         <Home></Home>
@@ -100,6 +112,8 @@ export default () => {
         <Colors></Colors>
       ) : currentPage == "toDoList" ? (
         <ToDoList></ToDoList>
+      ) : currentPage == "colorPicker" ? (
+        <ColorPicker></ColorPicker>
       ) : (
         <div></div>
       )}
