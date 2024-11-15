@@ -9,7 +9,7 @@ export default () => {
       <div className=" w-40 h-40 bg-white border-2">
         <div
           onClick={() => {
-            setInfo("hey");
+            setInfo("hey I made it");
           }}
           className="w-10 h-10 border-4 mx-14 mt-4 text-green-600 text-center cursor-pointer"
         >
