@@ -11,7 +11,7 @@ import ToDoList from "./pages/ToDoList.jsx";
 import ColorPicker from "./pages/ColorPicker.jsx";
 
 export default () => {
-  const [currentPage, setCurrentPage] = useState("colorPicker");
+  const [currentPage, setCurrentPage] = useState("info");
 
   return (
     <div>
